@@ -149,7 +149,7 @@ func (a *Actor) run() {
 			}
 		}
 	}
-	coroutinekit.Start("actor job name = "+a.Name+" id="+fmt.Sprint(a.ID), int(a.NumOfConcurrent), workF, true)
+	coroutinekit.Start("actor job name = "+a.Name+" id="+fmt.Sprint(a.ID), int(a.NumOfConcurrent), workF, true,false)
 	if len(a.Next) > 0 {
 		for _, v := range a.Next {
 			v.run()
